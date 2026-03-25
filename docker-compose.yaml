@@ -1,0 +1,19 @@
+services:
+  zeroclaw-app:
+    build: .
+    container_name: zeroclaw_container
+    tty: true
+    stdin_open: true
+    restart: always
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    volumes:
+      - ./ollama_data:/root/.ollama
+      - ./zeroclaw_config:/home/linuxbrew/.zeroclaw
+    ports:
+      - "11434:11434"
