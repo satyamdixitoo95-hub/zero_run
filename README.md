@@ -1,6 +1,6 @@
 # zero run 
 
-docker compose up -d
+docker compose up -d or go to this link  https://lightning.ai//vision-model/studios/personal-agent/code?turnOn=true
 
 docker exec -it zeroclaw_container /bin/bash
 
